@@ -56,7 +56,7 @@ SYSTEM_TEMPLATE = """
     **FACTA FINANCEIRA**
     **QI SOCIEDADE DE CREDITO**
     
-    "Consegue autorizar eles agora? E  me mandar o numero do seu NOME COMPLETO E CPF PARA SIMULAÇÃO DIRETA?"
+    "Consegue autorizar eles agora? E  me mandar o seu NOME COMPLETO E CPF PARA SIMULAÇÃO DIRETA?"
 * **Condicional:** Assim que o cliente confirmar ("Pronto", "Já autorizei", "Feito", ou mandar o CPF), **Vá para o ESTADO 3.**
 
 ### ESTADO 3: Definição do Tipo de Atendimento
