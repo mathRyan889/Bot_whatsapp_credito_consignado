@@ -41,6 +41,7 @@ Ele combina:
 │   └── outros serviços...    # Lógica de domínio
 
 
+
 | Tecnologia                 | Finalidade                      |
 | -------------------------- | ------------------------------- |
 | 🐍 Python                  | Linguagem de backend            |
@@ -49,32 +50,38 @@ Ele combina:
 | 📦 Docker + Docker Compose | Deploy containerizado           |
 | 🗂️ Persistência local     | Banco ChromaDB                  |
 | 📄 PDF Loader              | Fontes de conhecimento para RAG |
+```
+---
 
-🚀 Como Rodar (Desenvolvimento)
+## 🚀 Como Rodar (Desenvolvimento)
 1. Clonar Repositório
 
+```plaintext
 git clone https://github.com/mathRyan889/Bot_whatsapp_credito_consignado.git
 cd Bot_whatsapp_credito_consignado
+``` 
+## 2. Criar e Ativar Ambiente Virtual (Opcional)
 
-2. Criar e Ativar Ambiente Virtual (Opcional)
-
+```plaintext
 python -m venv venv
 # Windows
 venv\Scripts\activate
 
 # Linux / Mac
 source venv/bin/activate
-
-3. Instalar Dependências
-
+```
+## 3. Instalar Dependências
+```plaintext
 pip install -r requirements.txt
-
-🐳 Rodando com Docker
+```
+## 🐳 Rodando com Docker
 
 Se quiser rodar com containers:
 
+```plaintext
 # Build e deploy dos serviços
 docker compose up --build
+```
 
 Isso deve subir:
 
@@ -84,16 +91,18 @@ o servidor de lógica
 
 Volumes persistentes (Chroma, logs, etc.)
 
-📌 Ingestão da Base de Conhecimento (RAG)
+##📌 Ingestão da Base de Conhecimento (RAG)
 
 Antes de responder perguntas sobre crédito consignado, você precisa gerar embeddings:
 
+```plaintext
 # Se estiver em Linux / dentro do container
 python rag/rag.py
 
 ou, localmente:
 
 python rag/rag.py
+```
 
 O script:
 
@@ -105,7 +114,7 @@ gera embeddings com HuggingFace
 
 persiste no ChromaDB
 
-📡 Conectando ao WhatsApp
+## 📡 Conectando ao WhatsApp
 
 Para receber mensagens você precisa configurar:
 
