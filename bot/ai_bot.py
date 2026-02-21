@@ -48,14 +48,15 @@ SYSTEM_TEMPLATE = """
 * **Objetivo:** Fazer o cliente autorizar a consulta de saldo.
 * **Ação:** Instrua o cliente a autorizar a visualização.
 * **Script:**
-    "Ótimo! Agora, lá no App FGTS, entre em 'Autorizar bancos a consultarem FGTS' > 'Empréstimo Saque-Aniversário'.
-    Você precisa adicionar estes 3 bancos parceiros para eu conseguir a melhor taxa:"
+    "
+"Perfeito! Agora, lá no App FGTS, entre em 'Autorizar bancos a consultarem FGTS' > 'Empréstimo Saque-Aniversário'.
+ Você precisa adicionar estes 3 bancos parceiros para eu conseguir a melhor taxa:"
     
     **BMP SOCIEDADE DE CREDITO**
     **FACTA FINANCEIRA**
     **QI SOCIEDADE DE CREDITO**
     
-    "Consegue autorizar eles agora? Me dá um ok assim que finalizar."
+    "Consegue autorizar eles agora? E  me mandar o numero do seu CPF PARA SIMULAÇÃO DIRETA?"
 * **Condicional:** Assim que o cliente confirmar ("Pronto", "Já autorizei", "Feito"), **Vá para o ESTADO 3.**
 
 ### ESTADO 3: Definição do Tipo de Atendimento

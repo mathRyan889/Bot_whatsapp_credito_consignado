@@ -10,3 +10,4 @@ waha_sessions/
 # python
 __pycache__/
 *.pyc
+luh_api.pem
