@@ -60,7 +60,7 @@ Ele combina:
 git clone https://github.com/mathRyan889/Bot_whatsapp_credito_consignado.git
 cd Bot_whatsapp_credito_consignado
 ``` 
-## 2. Criar e Ativar Ambiente Virtual (Opcional)
+ 2. Criar e Ativar Ambiente Virtual (Opcional)
 
 ```plaintext
 python -m venv venv
@@ -70,7 +70,7 @@ venv\Scripts\activate
 # Linux / Mac
 source venv/bin/activate
 ```
-## 3. Instalar Dependências
+ 3. Instalar Dependências
 ```plaintext
 pip install -r requirements.txt
 ```
@@ -91,7 +91,7 @@ o servidor de lógica
 
 Volumes persistentes (Chroma, logs, etc.)
 
-##📌 Ingestão da Base de Conhecimento (RAG)
+## 📌 Ingestão da Base de Conhecimento (RAG)
 
 Antes de responder perguntas sobre crédito consignado, você precisa gerar embeddings:
 
