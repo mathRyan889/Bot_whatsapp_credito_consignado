@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /app
+
+# Instala dependências do sistema necessárias para compilação
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Garante permissões na pasta do banco de dados (crucial para ChromaDB)
+RUN chmod -R 777 /app
+
+EXPOSE 5050
+
+# Usa Gunicorn para produção com 3 workers e timeout alto para LLM
+CMD ["gunicorn", "--workers", "3", "--timeout", "120", "--bind", "0.0.0.0:5050", "app:app"]

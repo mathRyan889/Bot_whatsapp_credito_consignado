@@ -1,0 +1,37 @@
+services:
+  waha:
+    image: devlikeapro/waha:latest
+    container_name: Gabi_bot_waha
+    restart: always
+    ports:
+      - '3001:3000'
+    environment:
+      - WAHA_API_KEY=${WAHA_API_KEY}
+      - WAHA_DASHBOARD_USERNAME=${WAHA_DASHBOARD_USERNAME}
+      - WAHA_DASHBOARD_PASSWORD=${WAHA_DASHBOARD_PASSWORD}
+      - WHATSAPP_SWAGGER_USERNAME=${WAHA_DASHBOARD_USERNAME}
+      - WHATSAPP_SWAGGER_PASSWORD=${WAHA_DASHBOARD_PASSWORD}
+      - TZ=America/Sao_Paulo
+      - WAHA_PRINT_QR=true
+      # Importante: Webhooks devem apontar para o nome do container da API na rede interna
+      # - WAHA_WEBHOOK_URL=http://Gabi_bot_api:5050/chatbot/webhook/ 
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: Gabi_bot_api
+    restart: always
+    volumes:
+      - .:/app
+      # Persistência do ChromaDB forçada para evitar perda de dados
+      - ./chroma_datav2:/app/chroma_datav2
+    ports:
+      - '5050:5050'
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - WAHA_API_KEY=${WAHA_API_KEY}
+      # A API fala com o Waha usando o nome do serviço
+      - WAHA_API_URL=http://waha:3000
+    depends_on:
+      - waha

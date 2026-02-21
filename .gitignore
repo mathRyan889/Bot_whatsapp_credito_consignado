@@ -1,0 +1,12 @@
+# ambientes
+venv/
+.env
+
+# caches
+cache/
+model_cache/
+waha_sessions/
+
+# python
+__pycache__/
+*.pyc
