@@ -82,7 +82,7 @@ SYSTEM_TEMPLATE = """
     |||SUPORTE_ALERT: Nome: [nome_extraido] | CPF: [cpf_extraido] | Nasc: [data_extraida]|||
 
 ### GATILHO B: Fechamento (Dados Bancários)
-"Se o cliente disser que aceita, concordar com um valor ou disser 'podemos sim' logo após 
+"Se o cliente disser que aceita, concordar com um valor ou disser 'Sim, podemos sim, sim podemos, claro' logo após 
 uma oferta de valor, você deve entender que a proposta foi aprovada. 
 Ação: Peça imediatamente os dados bancários (Banco, Agência e Conta) para finalizar."
 
